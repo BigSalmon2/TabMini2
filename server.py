@@ -16,46 +16,29 @@ models = {
     "gpt2-trump": "http://main-gpt2-trump-gmlee329.endpoint.ainize.ai/"
 }
 
-
-@app.route("/gpt2", methods=['POST'])
+@app.route("/gpt2", methods=["POST"])
 def gpt2():
-    try:
-        context = request.form['context']
-        model = request.form['model']
-        length = request.form['length']
-
-    except Exception:
-        print("Empty Text")
-        return Response("fail", status=400)
+    context = request.form['context']
+    model = request.form['model']
+    length = request.form['length']
 
     url = models[model] + model + "/long"
 
-    if length == 'short':
-        times = random.randrange(2, 6)
-        data = {"text": context, "num_samples": 5, "length": times}
+    if length == "short":
+        length = random.randrange(2,6)
+    else:
+        length = 20
+    
+    data = {
+        "text": context,
+        "num_samples": 5,
+        "length": length
+    }
 
-    elif length == 'long':
-        data = {"text": context, "num_samples": 5, "length": 20}
-
-    count = 0
-    while True:
-        response = requests.post(url, data=data)
-
-        if response.status_code == 200:
-            res = response.json()
-            for i in range(5):
-                res[str(i)] = res[str(i)].strip()
-            return res
-
-        # 3초 초과 or 400 status 종료
-        elif response.status_code not in [429, 200] or count == 15:
-            return Response("fail", status=400)
-
-        elif response.status_code == 429:
-            count += 1
-            time.sleep(0.2)
-
-    return Response("fail", status=400)
+    response = requests.post(url, data=data)
+    res = response.json()
+    
+    return res
 
 
 @app.route("/")
