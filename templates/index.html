@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+        <script src="../static/index.js"></script>
+
+        <style>
+            .item:hover {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron mt-3">
+                <h1>TabTab Mini</h1>
+                <p>Write your context!</p>
+
+                <select id="model" style="margin-bottom: 10px;">
+                    <option value="gpt2-large">gpt2-large</option>
+                    <option value="gpt2-cover-letter">CoverLetter</option>
+                    <option value="gpt2-reddit">Reddit</option>
+                    <option value="gpt2-story">Story</option>
+                    <option value="gpt2-film">Film</option>
+                    <option value="gpt2-ads">Ads</option>
+                </select>
+
+                <input type="radio" name="length" checked="checked" value="short">short</input>
+                <input type="radio" name="length" value="long">long</input>
+
+                <textarea id="context" style="width:70%; height:40%; display: block; margin-bottom: 10px;">Hi I'm hyeonwoong and</textarea>
+                
+                <b>Result</b>
+                <div id="select_box">
+                    <ul style="width:100%">
+                        <li class="item" onclick="concat(this.innerHTML)"></li>
+                        <li class="item" onclick="concat(this.innerHTML)"></li>
+                        <li class="item" onclick="concat(this.innerHTML)"></li>
+                        <li class="item" onclick="concat(this.innerHTML)"></li>
+                        <li class="item" onclick="concat(this.innerHTML)"></li>
+                    </ul>
+                </div>
+                <button id="btn_autocomplete" class="btn btn-primary" onclick="suggestion()">Auto Complete!</button>
+            </div>
+        </div>
+    </body>
+</html>
