@@ -6,14 +6,14 @@ import random
 app = Flask(__name__, static_url_path='/static')
 
 models = {
-    "gpt2-large": "http://main-gpt2-large-jeong-hyun-su.endpoint.ainize.ai/",
-    "gpt2-cover-letter": "http://main-gpt2-cover-letter-jeong-hyun-su.endpoint.ainize.ai/",
-    "gpt2-reddit": "http://master-gpt2-reddit-woomurf.endpoint.ainize.ai/",
-    "gpt2-story": "http://main-gpt2-story-gmlee329.endpoint.ainize.ai/",
-    "gpt2-ads": "http://main-gpt2-ads-psi1104.endpoint.ainize.ai/",
-    "gpt2-business": "http://main-gpt2-business-leesangha.endpoint.ainize.ai/",
-    "gpt2-film": "http://main-gpt2-film-gmlee329.endpoint.ainize.ai/",
-    "gpt2-trump": "http://main-gpt2-trump-gmlee329.endpoint.ainize.ai/"
+    "gpt2-large": "http://main-gpt2-large-jeong-hyun-su.endpoint.ainize.ai/gpt2-large/long",
+    "gpt2-cover-letter": "http://main-gpt2-cover-letter-jeong-hyun-su.endpoint.ainize.ai/gpt2-cover-letter/long",
+    "gpt2-reddit": "http://master-gpt2-reddit-woomurf.endpoint.ainize.ai/gpt2-reddit/long",
+    "gpt2-story": "http://main-gpt2-story-gmlee329.endpoint.ainize.ai/gpt2-story/long",
+    "gpt2-ads": "http://main-gpt2-ads-psi1104.endpoint.ainize.ai/gpt2-ads/long",
+    "gpt2-business": "http://main-gpt2-business-leesangha.endpoint.ainize.ai/gpt2-business/long",
+    "gpt2-film": "http://main-gpt2-film-gmlee329.endpoint.ainize.ai/gpt2-film/long",
+    "gpt2-trump": "http://main-gpt2-trump-gmlee329.endpoint.ainize.ai/gpt2-trump/long"
 }
 
 @app.route("/gpt2", methods=["POST"])
@@ -22,7 +22,7 @@ def gpt2():
     model = request.form['model']
     length = request.form['length']
 
-    url = models[model] + model + "/long"
+    url = models[model]
 
     if length == "short":
         length = random.randrange(2,6)
