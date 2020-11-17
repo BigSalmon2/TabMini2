@@ -1,4 +1,4 @@
-# TabTab Tutorial
+# TabTab Mini
 
 [TabTab](https://kubecon-tabtab-jeong-hyun-su.endpoint.ainize.ai/) | [TabTab Repo](https://github.com/Jeong-Hyun-Su/tabtab) | [TabTab on Ainize](https://ainize.ai/Jeong-Hyun-Su/tabtab?branch=kubecon)
 
