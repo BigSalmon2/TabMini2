@@ -22,7 +22,7 @@ def gpt2():
     if length == "short":
         length = random.randrange(2,6)
     else:
-        length = 20
+        length = 5
     
     data = {
         "text": context,
