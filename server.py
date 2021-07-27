@@ -6,7 +6,7 @@ import random
 app = Flask(__name__, static_url_path='/static')
 
 models = {
-    "gpt2-large": "https://main-flowberta-big-salmon2.endpoint.ainize.ai/gpt2-story",
+    "gpt2-story": "https://main-flowberta-big-salmon2.endpoint.ainize.ai/gpt2-story",
     "gpt2-cover-letter": "http://main-gpt2-cover-letter-jeong-hyun-su.endpoint.ainize.ai/gpt2-cover-letter/long",
     "gpt2-reddit": "https://main-flowberta-big-salmon2.endpoint.ainize.ai/gpt2-story/long",
 }
