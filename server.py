@@ -27,7 +27,7 @@ def gpt2():
     data = {
         "text": context,
         "num_samples": 5,
-        "length": length,
+        "length": 3,
         "model": "BigSalmon/Flowberta"
     }
 
