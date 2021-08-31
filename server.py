@@ -27,9 +27,8 @@ def gpt2():
     
     data = {
         "text": context,
-        "num_samples": 12,
+        "num_samples": 5,
         "length": 3,
-        "model": "BigSalmon/Flowberta"
     }
 
     response = requests.post(url, data=data)
