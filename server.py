@@ -6,9 +6,9 @@ import random
 app = Flask(__name__, static_url_path='/static')
 
 models = {
-    "gpt2-story": "https://main-flowberta-big-salmon2.endpoint.ainize.ai/gpt2-story",
+    "gpt2-story": "https://main-gpt2-large-jeong-hyun-su.endpoint.ainize.ai/long",
     "gpt2-cover-letter": "http://main-gpt2-cover-letter-jeong-hyun-su.endpoint.ainize.ai/gpt2-cover-letter/long",
-    "gpt2-reddit": "https://main-flowberta-big-salmon2.endpoint.ainize.ai/gpt2-story/long",
+    "gpt2-reddit": "https://main-gpt2-large-jeong-hyun-su.endpoint.ainize.ai/long",
 }
 
 @app.route("/gpt2", methods=["POST"])
@@ -26,7 +26,7 @@ def gpt2():
     
     data = {
         "text": context,
-        "num_samples": 15,
+        "num_samples": 12,
         "length": 3,
         "model": "BigSalmon/Flowberta"
     }
